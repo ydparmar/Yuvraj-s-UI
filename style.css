@@ -1,0 +1,217 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* --- Top Bar --- */
+#topBar {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    padding: 0 15px;
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    user-select: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Buttons in top bar */
+.button {
+    position: relative;
+    background: #556cd6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-right: 20px;
+    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transform: scale(1.25);
+}
+
+.button:hover {
+    background-color: #405bb5;
+}
+
+/* Dropdown container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.button:hover > .dropdown-content {
+    display: block;
+}
+
+/* Dropdown items */
+.dropdownButton, .dropdown2Button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.dropdownButton:hover, .dropdown2Button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Nested dropdown (second level) */
+.dropdown2-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 1100;
+}
+
+/* Show nested dropdown on parent hover */
+.dropdownButton:hover > .dropdown2-content {
+    display: block;
+}
+
+/* Right side text - User and Close X */
+.text {
+    margin-left: auto;
+    margin-right: 12px;
+    color: #e0e0e0;
+    font-weight: 600;
+    user-select: none;
+}
+
+#x {
+    background: #e94e4e;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#x:hover {
+    background-color: #cc3c3c;
+}
+
+/* --- Sidebar --- */
+#sideBar {
+    position: fixed;
+    right: 0;
+    top: 60px;
+    width: 90px;
+    background: #fff;
+    height: calc(100vh - 50px);
+    padding: 15px 10px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Sidebar buttons */
+#sideBar button,
+#notesButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+#sideBar button:hover,
+#notesButton:hover {
+    transform: scale(1.2);
+}
+
+/* Sidebar icons */
+.cursorImage {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* --- Floating Notes Popup --- */
+#notesPopup {
+    position: fixed;
+    bottom: 20px;
+    right: 110px;
+    width: 300px;
+    background: #ffffff;
+    border: 1.5px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+/* When checkbox is checked → show popup */
+#notesToggle:checked ~ #notesPopup {
+    display: flex;
+}
+
+/* Header bar inside popup */
+#notesHeader {
+    background: #556cd6;
+    color: white;
+    font-weight: 600;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Close button */
+#closeNotes {
+    color: rgb(184, 47, 47);
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    background-color: #e48d8d;
+    border: none;
+    border-radius: 5px;
+}
+
+#closeNotes:hover {
+    color: #812f2f;
+}
+
+/* Notes area */
+#notesPopup textarea {
+    width: 100%;
+    resize: none;
+    height: 150px;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+}

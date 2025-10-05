@@ -1,0 +1,84 @@
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="topBar" role="menubar" aria-label="Application menu">
+        <button class="button" aria-haspopup="true" aria-expanded="false">File
+            <div class="dropdown-content" role="menu">
+                <div class="dropdownButton" role="menuitem" tabindex="-1">New document</div>
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Open document</div>
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Save document</div>
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Save as</div>
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Settings</div>
+            </div>
+        </button>
+
+        <button class="button" aria-haspopup="true" aria-expanded="false">Edit
+            <div class="dropdown-content" role="menu">
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Paths
+                    <div class="dropdown2-content" role="menu">
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Walkway</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Ladders</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Tubes</div>
+                    </div>
+                </div>
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Furniture
+                    <div class="dropdown2-content" role="menu">
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Chairs</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Tables</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Beds</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Toilet</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Gym Equipment</div>
+                    </div>
+                </div>
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Systems
+                    <div class="dropdown2-content" role="menu">
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Incinerator</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Oxygen Tank</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Water Filtration</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Propulsion</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Solar Panel</div>
+                        <div class="dropdown2Button" role="menuitem" tabindex="-1">Satellite</div>
+                    </div>
+                </div>
+            </div>
+        </button>
+
+        <button class="button" aria-haspopup="true" aria-expanded="false">View
+            <div class="dropdown-content" role="menu">
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Inside</div>
+                <div class="dropdownButton" role="menuitem" tabindex="-1">Outside</div>
+            </div>
+        </button>
+
+        <p class="text" id="user">User 6141</p>
+        <p class="text" id="x" role="button" aria-label="Close application">X</p>
+    </div>
+
+    <div id="sideBar" role="complementary" aria-label="Tools and notes">
+    <button aria-label="Cursor tool">
+        <img class="cursorImage" src="https://static.thenounproject.com/png/401779-200.png" alt="Cursor Icon" />
+    </button>
+    <button aria-label="Magnifying glass tool">
+        <img class="cursorImage" src="https://images.vexels.com/media/users/3/143436/isolated/preview/d9be9586ae36ea50337870fec296eb79-magnifying-glass-cartoon.png" alt="Magnifying Glass Icon" />
+    </button>
+    <button aria-label="Ruler tool">
+        <img class="cursorImage" src="https://freepngimg.com/thumb/ruler/7-2-ruler-png-picture-thumb.png" alt="Ruler Icon" />
+    </button>
+    <button id="notesButton" aria-label="Open notes">
+        <img class="cursorImage" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Notes (Pencil) Icon" />
+    </button>
+    </div>
+
+    <!-- Floating Notes Popup -->
+    <div id="notesPopup" role="dialog" aria-label="Notes popup">
+        <div id="notesHeader">
+            <span>✏️ Notes</span>
+            <button id="closeNotes" aria-label="Close notes">×</button>
+        </div>
+        <textarea id="notesTextarea" placeholder="Write your notes here..."></textarea>
+    </div>
+
+    <script src="main.js"></script>
+</body>
